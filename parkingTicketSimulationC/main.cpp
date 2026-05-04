@@ -1,9 +1,10 @@
 // main.cpp
-// This file will test the ParkedCar and ParkingMeter classes
+// This file will test the ParkedCar, ParkingMeter, and PoliceOfficer classes
 
 #include <iostream>
 #include "parkedCar.h"
 #include "parkingMeter.h"
+#include "policeOfficer.h"
 using namespace std;
 
 int main() {
@@ -12,6 +13,9 @@ int main() {
 
     // Creates a parking meter object
     ParkingMeter meter(60);
+
+    // Creates a police officer object
+    PoliceOfficer officer("John Smith", "B452");
 
     // Outputs information about the car for testing
     cout << "Parking Ticket Simulator" << endl;
@@ -29,6 +33,13 @@ int main() {
     // Outputs information about the parking meter for testing
     cout << "Parking Meter Information" << endl;
     cout << "Minutes Purchased: " << meter.getMinutesPurchased() << endl;
+
+    cout << endl;
+
+    // Outputs information about the police officer for testing
+    cout << "Police Officer Information" << endl;
+    cout << "Officer Name: " << officer.getOfficerName() << endl;
+    cout << "Badge Number: " << officer.getBadgeNumber() << endl;
 
     return 0;
 }
