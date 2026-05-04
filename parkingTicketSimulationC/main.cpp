@@ -41,5 +41,17 @@ int main() {
     cout << "Officer Name: " << officer.getOfficerName() << endl;
     cout << "Badge Number: " << officer.getBadgeNumber() << endl;
 
+    cout << endl;
+
+    // Checks if the car is parked illegally or legally
+    cout << "Inspection Result" << endl;
+
+    if (officer.isViolation(car, meter)) {
+        cout << "The car is parked illegally." << endl;
+    }
+    else {
+        cout << "The car is parked legally." << endl;
+    }
+
     return 0;
 }

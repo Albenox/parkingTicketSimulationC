@@ -6,6 +6,8 @@
 #define POLICEOFFICER_H
 
 #include <string>
+#include "parkedCar.h"
+#include "parkingMeter.h"
 using namespace std;
 
 // The class containing all of the methods and variables of PoliceOfficer
@@ -22,6 +24,9 @@ public:
     // Methods to get the variable data
     string getOfficerName() const;
     string getBadgeNumber() const;
+
+    // Method that checks if the car has been parked longer than the time purchased
+    bool isViolation(const ParkedCar& car, const ParkingMeter& meter) const;
 };
 
 #endif

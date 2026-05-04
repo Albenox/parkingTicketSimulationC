@@ -17,3 +17,8 @@ string PoliceOfficer::getOfficerName() const {
 string PoliceOfficer::getBadgeNumber() const {
     return badgeNumber;
 }
+
+// Method that compares the car minutes parked with the meter minutes purchased
+bool PoliceOfficer::isViolation(const ParkedCar& car, const ParkingMeter& meter) const {
+    return car.getMinutesParked() > meter.getMinutesPurchased();
+}
