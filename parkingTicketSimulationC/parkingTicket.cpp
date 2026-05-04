@@ -17,6 +17,26 @@ ParkingTicket::ParkingTicket(const ParkedCar& car, const ParkingMeter& meter, co
 
     officerName = officer.getOfficerName();
     badgeNumber = officer.getBadgeNumber();
+
+    calculateFine();
+}
+
+// Method that calculates the fine for the ticket
+void ParkingTicket::calculateFine() {
+    int minutesOver = minutesParked - minutesPurchased;
+
+    fine = 25;
+
+    if (minutesOver > 60) {
+        int additionalMinutes = minutesOver - 60;
+        int additionalHours = additionalMinutes / 60;
+
+        if (additionalMinutes % 60 != 0) {
+            additionalHours++;
+        }
+
+        fine += additionalHours * 10;
+    }
 }
 
 // Method that displays the parking ticket information
@@ -35,6 +55,11 @@ void ParkingTicket::displayTicket() const {
     cout << "Parking Time Information" << endl;
     cout << "Minutes Parked: " << minutesParked << endl;
     cout << "Minutes Purchased: " << minutesPurchased << endl;
+
+    cout << endl;
+
+    cout << "Fine Information" << endl;
+    cout << "Fine: $" << fine << endl;
 
     cout << endl;
 

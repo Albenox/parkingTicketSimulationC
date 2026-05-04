@@ -24,9 +24,15 @@ private:
     int minutesParked;
     int minutesPurchased;
 
+    // Variable that stores the parking fine
+    int fine;
+
     // Variables with important information about the officer
     string officerName;
     string badgeNumber;
+
+    // Method that calculates the fine for the ticket
+    void calculateFine();
 
 public:
     // Constructor
